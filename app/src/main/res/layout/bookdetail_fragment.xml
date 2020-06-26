@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.swkang.model.domain.booksearch.detail.BookDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bookdetail_contents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@{vm.contents}"
+                android:textColor="@color/fontcolor_heavygray"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_title"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_datetime"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_div"
+                tools:text="인간은 변할 수 있고, 누구나 행복해 질 수 있다. 단 그러기 위해서는 ‘용기’가 필요하다”고 말한 철학자가 있다. 바로 프로이트, 융과 함께 ‘심리학의 3대 거장’으로 일컬어지고 있는 알프레드 아들러다. 『미움받을 용기』는 아들러 심리학에 관한 일본의 1인자 철학자 기시미 이치로와 베스트셀러 작가인 고가 후미타케의 저서로, 아들러의 심리학을 ‘대화체’로 쉽고 맛깔나게 정리하고 있다. 아들러 심리학을 공부한 철학자와 세상에 부정적이고 열등감 많은" />
+
+            <View
+                android:id="@+id/bookdetail_div"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/bookdetail_div"
+                app:layout_constraintBottom_toTopOf="@+id/bookdetail_price"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_thumbnail"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_datetime"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_saleprice"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/bookdetail_saleprice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.salePrice}"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_price"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_price"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_price"
+                tools:text="할인가 100,000원" />
+
+            <TextView
+                android:id="@+id/bookdetail_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{vm.price}"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_datetime"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_datetime"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_datetime"
+                tools:text="정가 100,000원" />
+
+            <TextView
+                android:id="@+id/bookdetail_datetime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.dateTime}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_publisher"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_publisher"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_publisher"
+                tools:text="2020.12.25" />
+
+            <TextView
+                android:id="@+id/bookdetail_publisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.publisher}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_author"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_author"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_translater"
+                tools:text="가나 출판사" />
+
+            <TextView
+                android:id="@+id/bookdetail_translater"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.translator}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/bookdetail_author"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_author"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_author"
+                tools:text="번역한 사람 이름" />
+
+            <TextView
+                android:id="@+id/bookdetail_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@{vm.authors}"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/bookdetail_thumbnail"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/bookdetail_title"
+                app:layout_constraintTop_toTopOf="@+id/bookdetail_thumbnail"
+                tools:text="책 쓴 사람 이름" />
+
+            <TextView
+                android:id="@+id/bookdetail_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@{vm.title}"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="인간은 변할 수 있고, 누구나 행복해 질 수 있다." />
+
+            <ImageView
+                android:id="@+id/bookdetail_thumbnail"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                app:bookThumbnail="@{vm.thumbnail}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bookdetail_title"
+                tools:background="@color/fontcolor_lightgray" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="190dp">
+
+    <TextView
+        android:id="@+id/bookPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="book_price"
+        android:textColor="@color/fontcolor_heavygray"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/bookAuthorDate"
+        app:layout_constraintStart_toStartOf="@+id/bookAuthorDate"
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthorDate"
+        tools:text="정가 1000000원" />
+
+    <TextView
+        android:id="@+id/bookAuthorDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:textColor="@color/fontcolor_lightgray"
+        app:layout_constraintEnd_toEndOf="@+id/bookContents"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bookContents"
+        app:layout_constraintTop_toBottomOf="@+id/bookContents"
+        tools:text="강성윤 지음 | 루비페이퍼 | 2019.6.25." />
+
+    <TextView
+        android:id="@+id/bookContents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:lines="2"
+        android:text="TextView"
+        android:textColor="@color/fontcolor_heavygray"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/bookTitle"
+        app:layout_constraintStart_toStartOf="@+id/bookTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle"
+        tools:text="이 책은 각 챕터마다 안드로이드 프로그램과 각 기능이 어떠한 구조로 어떻게 작동하는지 그 원리를 파악하는 데 주력합니다. 그리고 이를 구현하는 핵심 코드를 알아본 다음, 이를 " />
+
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookThumbnail"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="가나다라 마바사 아자차카" />
+
+    <ImageView
+        android:id="@+id/bookThumbnail"
+        android:layout_width="90dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
