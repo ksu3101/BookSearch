@@ -12,7 +12,7 @@ data class BookResult(
 )
 
 data class Meta(
-    @Json(name = "is_end") val isEnd: Boolean,
-    @Json(name = "pageable_count") val pageableCount: Int,
-    @Json(name = "total_count") val totalCount: Int
+    @field:Json(name = "is_end") val isEnd: Boolean,
+    @field:Json(name = "pageable_count") val pageableCount: Int,
+    @field:Json(name = "total_count") val totalCount: Int
 )

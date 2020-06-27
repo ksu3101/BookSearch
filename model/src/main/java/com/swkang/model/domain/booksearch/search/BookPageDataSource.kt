@@ -28,7 +28,7 @@ class BookPageDataSource(
             repo.requestBookSearch(query, 1)
                 .subscribe(
                     {
-                        callback.onResult(it.documents, null, BookSearchParams(query, 2))
+                        callback.onResult(it.documents, null, BookSearchParams(query, it.meta.isEnd,2))
                     },
                     {
                         appStore.dispatch(ShowToastMessageAction(messageStr = it.message))
@@ -45,13 +45,14 @@ class BookPageDataSource(
             "BookPageDataSource",
             "loadNextPage page = [${params.key.page}], query = `${params.key.query}`"
         )
+        if (params.key.isEnd) return
         disposer.addDisposer(
             repo.requestBookSearch(params.key.query, params.key.page)
                 .subscribe(
                     {
                         callback.onResult(
                             it.documents,
-                            BookSearchParams(params.key.query, params.key.page + 1)
+                            BookSearchParams(params.key.query, it.meta.isEnd, params.key.page + 1)
                         )
                     },
                     {
@@ -70,5 +71,6 @@ class BookPageDataSource(
 
 data class BookSearchParams(
     val query: String,
+    val isEnd: Boolean,
     val page: Int
 )

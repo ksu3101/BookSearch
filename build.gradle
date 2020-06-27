@@ -30,7 +30,7 @@ task clean(type: Delete) {
 ext {
 	// sdks
 	minSdk = 14
-	targetSdk = 14
+	targetSdk = 28
 	compileSdk = 28
 
 	// android dependency
