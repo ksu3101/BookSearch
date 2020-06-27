@@ -90,7 +90,7 @@
 ### 3.2 `model` 모듈 
 
 `model`모듈의 목적은 각 도메인별 비즈니스 로직의 수행과 `ViewModel`의 구현 및 관리 입니다.   
-비즈니스 로직의 수행을 위해 관련된 기본, 공통모듈들의 구현 되어 있습니다. 
+비즈니스 로직의 수행을 위해 관련된 기본, 공통모듈들이 구현 되어 있습니다. 
 
 #### 3.2.1 `base` 패키지
 
@@ -111,7 +111,8 @@
     - `redux`에서 전달받은 `State`를 처리 하는 `render()`함수 구현
   - `RecyclerView`에서 사용 될 클래스 들
     - 아이템 데이터 클래스
-    - `Paging`하기 위해 제공될 `DataSource`의 구현과 `DataSourceFactory`클래스
+    - `Paging`하기 위해 필요한 `DataSource`의 구현과 `DataSourceFactory`클래스
+    - `PagedListAdapter`
 - 공통 도메인 하위 패키지
 
 ### 3.3 `common` 모듈 
@@ -226,10 +227,3 @@ interface Store<S : State> {
 `Reducer`는 `Middleware`를 통해 전달 받은 `Action`을 이전 `State`와 함께 핸들링 하여 새로운 `State`혹은 이전 `State`를 그대로 반환합니다. 
 
 `Reducer`는 도메인에 대해 1:1 관계를 가질수 있으며, 필요하다면 서브 도메인 으로 쪼개서 여러개를 가질 수 있습니다. 
-
-## 5. ETC
-
-#### 5.1 Paging with DataSource
-
-#### 5.2 SearchView 
-
