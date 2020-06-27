@@ -26,6 +26,8 @@
 - [moshi](https://github.com/square/moshi)
 - [glide](https://github.com/bumptech/glide)
 
+추가적으로 아키텍쳐는 "MVVM + Redux base architecture"입니다.  
+
 ## 2. App flow
 
 #### 2.1. 처음 실행 시, `SerachView`에 커서 및 키보드 등장 -> 사용자 입력 대기 상태
