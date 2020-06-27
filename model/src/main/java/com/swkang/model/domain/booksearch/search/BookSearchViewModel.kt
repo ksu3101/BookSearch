@@ -1,6 +1,7 @@
 package com.swkang.model.domain.booksearch.search
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.swkang.common.BOOKSEARCH_LOADPAGE_PREFETCH_DISTANCE
@@ -28,6 +29,10 @@ class BookSearchViewModel @Inject constructor(
         .setPrefetchDistance(BOOKSEARCH_LOADPAGE_PREFETCH_DISTANCE)
         .build()
 
+    private val _booksEmpty = MutableLiveData<Boolean>()
+    val booksEmpty: LiveData<Boolean>
+        get() = _booksEmpty
+
     val onBookItemClicked: (Book) -> Unit = {
         navigationHelper.openBookDetailPage(it)
     }
@@ -44,6 +49,7 @@ class BookSearchViewModel @Inject constructor(
 
             is RequestBookSearchByQueryState -> {
                 books = createLivePagedListDatas(state.query)
+                _booksEmpty.value = books.value?.isEmpty() ?: true
                 true
             }
 

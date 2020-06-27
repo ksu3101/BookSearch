@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BookSearch</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">
+        com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
+    </string>
+
 </resources>

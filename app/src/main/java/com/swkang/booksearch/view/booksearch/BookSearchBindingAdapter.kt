@@ -1,7 +1,6 @@
 package com.swkang.booksearch.view.booksearch
 
 import android.widget.ImageView
-import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +16,7 @@ import com.swkang.model.domain.booksearch.dto.Book
 @BindingAdapter(value = ["bookItems", "onItemClicked"])
 fun setUpBookItems(rv: RecyclerView, items: PagedList<Book>?, onItemClicked: (Book) -> Unit) {
     val adapter = BookItemsAdapter { onItemClicked(it) }
+    rv.setHasFixedSize(true)
     rv.adapter = adapter
     adapter.submitList(items)
 }
@@ -28,3 +28,4 @@ fun loadBookImage(iv: ImageView, url: String?) {
         .placeholder(R.drawable.img_placeholder)
         .into(iv)
 }
+
