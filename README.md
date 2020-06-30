@@ -2,8 +2,6 @@
 
 [카카오 책 API](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book)를 활용 해 도서 검색하는 앱 입니다.
 
-[APK 파일 다운로드](https://drive.google.com/file/d/1Wg2TS-aZ6o_Hob7G5M0wgnXOgI6yuGMV/view?usp=sharing)
-
 ## 1. used libraries
 
 사용한 외부 라이브러리는 아래와 같습니다. 
