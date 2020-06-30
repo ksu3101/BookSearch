@@ -2,9 +2,9 @@ package com.swkang.model.base.redux
 
 import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.common.message.MessageState
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.BehaviorSubject
 
 /**
  * @author kangsungwoo

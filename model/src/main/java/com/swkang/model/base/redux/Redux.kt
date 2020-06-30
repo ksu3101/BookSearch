@@ -1,6 +1,6 @@
 package com.swkang.model.base.redux
 
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 
 interface Action

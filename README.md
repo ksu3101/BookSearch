@@ -26,7 +26,7 @@
 - [moshi](https://github.com/square/moshi)
 - [glide](https://github.com/bumptech/glide)
 
-추가적으로 아키텍쳐는 "MVVM + Redux base architecture"입니다.  
+추가적으로 아키텍쳐는 "MVVM + Redux base architecture"입니다.
 
 ## 2. App flow
 

@@ -1,7 +1,8 @@
 package com.swkang.model.base.redux
 
-import io.reactivex.Observable
-import io.reactivex.subjects.PublishSubject
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.PublishSubject
+
 
 /**
 * @author kangsungwoo
@@ -11,7 +12,7 @@ class ActionProcessorMiddleware<S : State>(
     private val actionProcessor: ActionProcessor<S>
 ) : MiddleWare<S> {
     override fun create(store: Store<S>, next: Dispatcher): Dispatcher {
-        val actionEmitter:PublishSubject<Action> = PublishSubject.create()
+        val actionEmitter: PublishSubject<Action> = PublishSubject.create()
         val disposable = actionProcessor.run(actionEmitter, store)
             .subscribe { action ->
                 store.dispatch(action)

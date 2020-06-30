@@ -45,14 +45,14 @@ ext {
 	paging = '2.1.2'
 
 	// reactive x
-	rxAndroid = '2.1.1'
+	rxAndroid = '3.0.0'
 
 	// dependency injection tool
 	dagger = '2.27'
 
 	// network
 	retrofit = '2.4.0'
-	retrofitRxAdapter = '2.3.0'
+	retrofitRxAdapter = '2.9.0'
 	retrofitMoshiConverter = '2.4.0'
 	okhttpLoggingInterceptor = '3.5.0'
 	glide = '4.11.0'

@@ -1,8 +1,7 @@
 package com.swkang.model.domain.booksearch
 
-import com.swkang.model.domain.booksearch.dto.Book
 import com.swkang.model.domain.booksearch.dto.BookResult
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 
 /**
  * @author kangsungwoo

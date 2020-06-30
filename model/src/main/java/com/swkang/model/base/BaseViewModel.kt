@@ -2,8 +2,8 @@ package com.swkang.model.base
 
 import androidx.lifecycle.ViewModel
 import com.swkang.model.base.redux.State
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  * @author kangsungwoo
