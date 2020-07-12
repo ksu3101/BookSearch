@@ -2,6 +2,14 @@
 
 [카카오 책 API](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book)를 활용 해 도서 검색하는 앱 입니다.
 
+
+## 0. variations
+
+|대상브랜치|설명|
+|---|---|
+|master|기본 브랜치|
+|[dagger-hilt](https://github.com/ksu3101/BookSearch/tree/dagger_hilt)|dagger android support을 dagger hilt으로 마이그레이션한 브랜치|
+
 ## 1. used libraries
 
 사용한 외부 라이브러리는 아래와 같습니다. 
