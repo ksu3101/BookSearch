@@ -5,10 +5,10 @@
 
 ## 0. variations
 
-|대상브랜치|설명|
-|---|---|
-|master|기본 브랜치|
-|[dagger-hilt](https://github.com/ksu3101/BookSearch/tree/dagger_hilt)|dagger android support을 dagger hilt으로 마이그레이션한 브랜치|
+|대상브랜치|설명|compare branch to master|
+|---|---|---|
+|master|기본 브랜치|none|
+|[dagger-hilt](https://github.com/ksu3101/BookSearch/tree/dagger_hilt)|dagger android support을 dagger hilt으로 마이그레이션한 브랜치|[compare](https://github.com/ksu3101/BookSearch/pull/1/files)|
 
 ## 1. used libraries
 
