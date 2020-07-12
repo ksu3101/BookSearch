@@ -18,7 +18,7 @@
 - [constraintlayout](https://developer.android.com/jetpack/androidx/releases/constraintlayout?hl=ko)
 - [multidex](https://developer.android.com/studio/build/multidex?hl=ko)
 - [rxandroid](https://github.com/ReactiveX/RxAndroid)
-- [dagger](https://developer.android.com/training/dependency-injection/dagger-android)
+- [dagger-hilt](https://dagger.dev/hilt/)
 - [retrofit](https://square.github.io/retrofit/)
 - [okhttp](https://square.github.io/okhttp/)
 - [moshi](https://github.com/square/moshi)

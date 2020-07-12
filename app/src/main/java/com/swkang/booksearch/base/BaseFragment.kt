@@ -1,6 +1,5 @@
 package com.swkang.booksearch.base
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +11,8 @@ import androidx.fragment.app.Fragment
 import com.swkang.model.BR
 import com.swkang.model.base.BaseViewModel
 import com.swkang.model.base.redux.AppStore
-import com.swkang.model.base.redux.State
 import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.booksearch.search.BookSearchViewModel
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasAndroidInjector
-import dagger.android.support.AndroidSupportInjection
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import javax.inject.Inject
@@ -27,27 +21,18 @@ import javax.inject.Inject
  * @author kangsungwoo
  * @since 6/25/2020
  */
-abstract class BaseFragment<S : State> : Fragment(), HasAndroidInjector {
-    @Inject
-    lateinit var androidInjector: DispatchingAndroidInjector<Any>
-
+abstract class BaseFragment: Fragment() {
     @Inject
     lateinit var store: AppStore
+
     private lateinit var binding: ViewDataBinding
-    private lateinit var viewModel: BaseViewModel<S>
+    private lateinit var viewModel: BaseViewModel<*>
     private val compositeDisposable = CompositeDisposable()
 
     @LayoutRes
     abstract fun getLayoutId(): Int
 
-    abstract fun createViewModel(): BaseViewModel<S>
-
-    override fun androidInjector(): AndroidInjector<Any> = androidInjector
-
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
+    abstract fun createViewModel(): BaseViewModel<*>
 
     override fun onCreateView(
         inflater: LayoutInflater,

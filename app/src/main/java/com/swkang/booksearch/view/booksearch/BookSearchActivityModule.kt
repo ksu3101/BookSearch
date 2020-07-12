@@ -1,31 +1,29 @@
 package com.swkang.booksearch.view.booksearch
 
-import android.app.Activity
-import com.swkang.booksearch.base.di.scope.ActivityScope
-import com.swkang.booksearch.view.booksearch.detail.BookDetailFragmentModule
-import com.swkang.booksearch.view.booksearch.search.BookSearchFragmentModule
-import dagger.Binds
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
+import com.swkang.model.domain.booksearch.BookSearchNavigationHelper
 import dagger.Module
-import dagger.android.ContributesAndroidInjector
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.scopes.ActivityScoped
 
 /**
  * @author kangsungwoo
- * @since 6/25/2020
+ * @since 7/12/2020
  */
 @Module
-abstract class BookSearchActivityModule {
+@InstallIn(ActivityComponent::class)
+object BookSearchActivityModule {
 
-    @ActivityScope
-    @ContributesAndroidInjector(
-        modules = [
-            BookSearchFragmentModule::class,
-            BookDetailFragmentModule::class
-        ]
-    )
-    abstract fun bookSearchActivity(): BookSearchActivity
-
-    @Binds
-    @ActivityScope
-    abstract fun bindBookSearchActivity(activity: BookSearchActivity): Activity
+    @ActivityScoped
+    @Provides
+    fun provideBookSearchNavigationHelper(
+        @ActivityContext context: Context
+    ): BookSearchNavigationHelper {
+        return BookSearchNavigationHelperImpl(context as BookSearchActivity)
+    }
 
 }

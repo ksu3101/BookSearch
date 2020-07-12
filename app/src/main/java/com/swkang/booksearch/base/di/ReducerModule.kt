@@ -4,6 +4,8 @@ import com.swkang.model.domain.booksearch.BookSearchReducer
 import com.swkang.model.domain.common.message.MessageReducer
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
 /**
@@ -11,16 +13,17 @@ import javax.inject.Singleton
  * @since 6/25/2020
  */
 @Module
+@InstallIn(ApplicationComponent::class)
 class ReducerModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideMessageReducer(): MessageReducer {
         return MessageReducer()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBookSearchReducer(): BookSearchReducer {
         return BookSearchReducer()
     }

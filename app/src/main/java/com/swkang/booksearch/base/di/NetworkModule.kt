@@ -6,6 +6,8 @@ import com.swkang.booksearch.repositories.booksearch.BookSearchRepositoryImpl
 import com.swkang.model.domain.booksearch.BookSearchRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,11 +21,12 @@ import javax.inject.Singleton
  * @since 6/25/2020
  */
 @Module
+@InstallIn(ApplicationComponent::class)
 class NetworkModule {
     private val TIMEOUT_SEC = 10L
 
-    @Provides
     @Singleton
+    @Provides
     fun provieOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(TIMEOUT_SEC, TimeUnit.SECONDS)
@@ -33,8 +36,8 @@ class NetworkModule {
             .build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
@@ -44,14 +47,14 @@ class NetworkModule {
             .build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBookSearchApi(retrofit: Retrofit): BookSearchApi {
         return retrofit.create(BookSearchApi::class.java)
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBookSearchRepository(api: BookSearchApi): BookSearchRepository {
         return BookSearchRepositoryImpl(api)
     }
