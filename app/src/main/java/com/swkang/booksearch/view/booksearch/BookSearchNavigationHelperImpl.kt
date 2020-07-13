@@ -1,5 +1,6 @@
 package com.swkang.booksearch.view.booksearch
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.swkang.booksearch.R
 import com.swkang.booksearch.view.booksearch.search.BookSearchFragmentDirections
@@ -11,7 +12,7 @@ import com.swkang.model.domain.booksearch.dto.Book
  * @since 6/25/2020
  */
 class BookSearchNavigationHelperImpl constructor(
-    private val activity: BookSearchActivity
+    private val activity: AppCompatActivity
 ) : BookSearchNavigationHelper {
 
     override fun openBookDetailPage(book: Book) {

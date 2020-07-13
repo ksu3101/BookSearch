@@ -23,7 +23,7 @@ object BookSearchActivityModule {
     fun provideBookSearchNavigationHelper(
         @ActivityContext context: Context
     ): BookSearchNavigationHelper {
-        return BookSearchNavigationHelperImpl(context as BookSearchActivity)
+        return BookSearchNavigationHelperImpl(context as AppCompatActivity)
     }
 
 }
