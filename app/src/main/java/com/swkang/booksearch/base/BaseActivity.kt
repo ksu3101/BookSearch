@@ -45,7 +45,7 @@ abstract class BaseActivity : AppCompatActivity() {
     private fun handleMessageState(state: MessageState) {
         when (state) {
             is ShowToastMessageState -> {
-                messageHelper.showToast(state.messageResId)
+                messageHelper.showToast(state.messageResId, state.messageStr)
             }
 
         }
