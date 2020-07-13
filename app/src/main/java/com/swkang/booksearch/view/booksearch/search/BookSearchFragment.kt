@@ -21,7 +21,7 @@ import javax.inject.Inject
  * @author kangsungwoo
  * @since 6/25/2020
  */
-class BookSearchFragment : BaseFragment<BookSearchState>() {
+class BookSearchFragment : BaseFragment() {
     @Inject
     lateinit var vmFactory: ViewModelProvider.Factory
     private val vm: BookSearchViewModel by viewModels { vmFactory }

@@ -61,7 +61,7 @@ abstract class BaseActivity : AppCompatActivity(), HasAndroidInjector {
     private fun handleMessageState(state: MessageState) {
         when (state) {
             is ShowToastMessageState -> {
-                messageHelper.showToast(state.messageResId)
+                messageHelper.showToast(state.messageResId, state.messageStr)
             }
 
         }

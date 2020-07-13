@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import com.swkang.model.BR
 import com.swkang.model.base.BaseViewModel
 import com.swkang.model.base.redux.AppStore
-import com.swkang.model.base.redux.State
 import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.booksearch.search.BookSearchViewModel
 import dagger.android.AndroidInjector
@@ -27,20 +26,20 @@ import javax.inject.Inject
  * @author kangsungwoo
  * @since 6/25/2020
  */
-abstract class BaseFragment<S : State> : Fragment(), HasAndroidInjector {
+abstract class BaseFragment : Fragment(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     @Inject
     lateinit var store: AppStore
     private lateinit var binding: ViewDataBinding
-    private lateinit var viewModel: BaseViewModel<S>
+    private lateinit var viewModel: BaseViewModel<*>
     private val compositeDisposable = CompositeDisposable()
 
     @LayoutRes
     abstract fun getLayoutId(): Int
 
-    abstract fun createViewModel(): BaseViewModel<S>
+    abstract fun createViewModel(): BaseViewModel<*>
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
