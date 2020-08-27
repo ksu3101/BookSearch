@@ -15,6 +15,7 @@ import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.booksearch.search.BookSearchViewModel
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import java.lang.NullPointerException
 import javax.inject.Inject
 
 /**
@@ -25,8 +26,9 @@ abstract class BaseFragment: Fragment() {
     @Inject
     lateinit var store: AppStore
 
-    private lateinit var binding: ViewDataBinding
     private lateinit var viewModel: BaseViewModel<*>
+    private var _binding: ViewDataBinding? = null
+    private val binding get() = _binding!!
     private val compositeDisposable = CompositeDisposable()
 
     @LayoutRes
@@ -56,7 +58,7 @@ abstract class BaseFragment: Fragment() {
             )
         }
 
-        binding = DataBindingUtil.inflate(
+        _binding = DataBindingUtil.inflate(
             inflater,
             getLayoutId(),
             container,
@@ -72,6 +74,7 @@ abstract class BaseFragment: Fragment() {
         if (::viewModel.isInitialized) {
             viewModel.dispose()
         }
+        _binding = null
         super.onDestroyView()
     }
 
