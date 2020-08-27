@@ -15,7 +15,6 @@ import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.booksearch.search.BookSearchViewModel
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import java.lang.NullPointerException
 import javax.inject.Inject
 
 /**
