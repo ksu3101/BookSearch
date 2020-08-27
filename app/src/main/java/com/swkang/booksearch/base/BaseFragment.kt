@@ -20,6 +20,7 @@ import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import java.lang.NullPointerException
 import javax.inject.Inject
 
 /**
@@ -32,7 +33,8 @@ abstract class BaseFragment : Fragment(), HasAndroidInjector {
 
     @Inject
     lateinit var store: AppStore
-    private lateinit var binding: ViewDataBinding
+    private var _binding: ViewDataBinding? = null
+    private val binding get() = _binding!!
     private lateinit var viewModel: BaseViewModel<*>
     private val compositeDisposable = CompositeDisposable()
 
@@ -70,7 +72,7 @@ abstract class BaseFragment : Fragment(), HasAndroidInjector {
             )
         }
 
-        binding = DataBindingUtil.inflate(
+        _binding = DataBindingUtil.inflate(
             inflater,
             getLayoutId(),
             container,
@@ -86,6 +88,7 @@ abstract class BaseFragment : Fragment(), HasAndroidInjector {
         if (::viewModel.isInitialized) {
             viewModel.dispose()
         }
+        _binding = null
         super.onDestroyView()
     }
 
