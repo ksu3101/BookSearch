@@ -8,4 +8,6 @@ import dagger.hilt.android.HiltAndroidApp
  * @since 6/25/2020
  */
 @HiltAndroidApp
-class BookSearchApplication: MultiDexApplication()
+class BookSearchApplication: MultiDexApplication() {
+    val isMock = false
+}

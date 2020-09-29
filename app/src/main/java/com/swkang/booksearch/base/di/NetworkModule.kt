@@ -1,8 +1,10 @@
 package com.swkang.booksearch.base.di
 
+import com.swkang.booksearch.BookSearchApplication
 import com.swkang.booksearch.base.network.AddKakaoAkHeaderIntercepter
 import com.swkang.booksearch.repositories.booksearch.BookSearchApi
 import com.swkang.booksearch.repositories.booksearch.BookSearchRepositoryImpl
+import com.swkang.booksearch.repositories.booksearch.BookSearchRepositoryMockImpl
 import com.swkang.model.domain.booksearch.BookSearchRepository
 import dagger.Module
 import dagger.Provides
@@ -55,8 +57,8 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideBookSearchRepository(api: BookSearchApi): BookSearchRepository {
-        return BookSearchRepositoryImpl(api)
+    fun provideBookSearchRepository(context: BookSearchApplication, api: BookSearchApi): BookSearchRepository {
+        return if (context.isMock) BookSearchRepositoryMockImpl() else  BookSearchRepositoryImpl(api)
     }
 
 }
