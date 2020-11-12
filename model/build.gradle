@@ -51,7 +51,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appCompat"
-    implementation "androidx.paging:paging-runtime:$paging"
+    implementation "androidx.paging:paging-runtime-ktx:$paging"
     implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitMoshiConverter"
     implementation "com.google.dagger:dagger:$dagger"

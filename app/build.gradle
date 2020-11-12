@@ -41,6 +41,9 @@ android {
 		enabled = true
 		enabledForTests = true
 	}
+	viewBinding {
+		enabled = true
+	}
 	dexOptions {
 		preDexLibraries = false
 		javaMaxHeapSize '2048M'
@@ -63,7 +66,7 @@ dependencies {
 	implementation "com.android.support.constraint:constraint-layout:$constraintlayout"
 	implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
 	implementation "androidx.navigation:navigation-ui-ktx:$navigation"
-	implementation "androidx.paging:paging-runtime:$paging"
+	implementation "androidx.paging:paging-runtime-ktx:$paging"
 
 	implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid"
 	implementation "com.github.bumptech.glide:glide:$glide"
