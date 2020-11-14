@@ -8,7 +8,14 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
+.gradle/
 /build
 /captures
 .externalNativeBuild
 .cxx
+*.apk
+*.ap_
+*.dex
+bin/
+gen/
+Thumbs.db
