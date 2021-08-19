@@ -13,14 +13,15 @@ import com.swkang.booksearch.base.BaseFragment
 import com.swkang.booksearch.view.booksearch.BookSearchActivity
 import com.swkang.common.BOOKS_RV_STATE_KEY
 import com.swkang.model.base.BaseViewModel
-import com.swkang.model.domain.booksearch.BookSearchState
 import com.swkang.model.domain.booksearch.search.BookSearchViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
  * @author kangsungwoo
  * @since 6/25/2020
  */
+@AndroidEntryPoint
 class BookSearchFragment : BaseFragment() {
     @Inject
     lateinit var vmFactory: ViewModelProvider.Factory
@@ -29,7 +30,7 @@ class BookSearchFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.booksearch_fragment
 
-    override fun createViewModel(): BaseViewModel<BookSearchState> = vm
+    override fun createViewModel(): BaseViewModel<*> = vm
 
     override fun onCreateView(
         inflater: LayoutInflater,

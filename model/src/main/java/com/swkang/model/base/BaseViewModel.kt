@@ -26,4 +26,8 @@ abstract class BaseViewModel<S: State> : ViewModel(), RxDisposer {
             compositeDisposable.dispose()
         }
     }
+
+    override fun onCleared() {
+        dispose()
+    }
 }

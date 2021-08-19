@@ -12,6 +12,9 @@ import com.swkang.model.domain.common.message.HandledMessageState
 import com.swkang.model.domain.common.message.MessageReducer
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
 /**
@@ -19,6 +22,7 @@ import javax.inject.Singleton
  * @since 6/25/2020
  */
 @Module
+@InstallIn(ApplicationComponent::class)
 object ApplicationModule {
 
     @Singleton
@@ -52,13 +56,13 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideMessageHelper(context: Context): MessageHelper {
+    fun provideMessageHelper(@ApplicationContext context: Context): MessageHelper {
         return MessageHelperImpl(context)
     }
 
     @Singleton
     @Provides
-    fun provideResourceHelper(context: Context): ResourceHelper {
+    fun provideResourceHelper(@ApplicationContext context: Context): ResourceHelper {
         return ResourceHelperImpl(context)
     }
 

@@ -11,14 +11,24 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.appbar.AppBarLayout
 import com.swkang.booksearch.R
 import com.swkang.booksearch.base.BaseActivity
+import com.swkang.model.base.helper.MessageHelper
+import com.swkang.model.base.redux.AppStore
 import com.swkang.model.domain.booksearch.RequestBookSearchAction
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.booksearch_activity.*
+import javax.inject.Inject
 
 /**
  * @author kangsungwoo
  * @since 6/25/2020
  */
+@AndroidEntryPoint
 class BookSearchActivity : BaseActivity() {
+    @Inject
+    lateinit var store: AppStore
+    @Inject
+    lateinit var msgHelper: MessageHelper
+
     private var query: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
