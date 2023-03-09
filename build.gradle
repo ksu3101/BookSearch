@@ -56,6 +56,9 @@ ext {
 	retrofitMoshiConverter = '2.4.0'
 	okhttpLoggingInterceptor = '3.5.0'
 	glide = '4.11.0'
+	
+	// ci - sonarcloud
+	sonarcloud = '3.5.0.2730'
 
 	// unit testing
 	jUnit = '4.12'
