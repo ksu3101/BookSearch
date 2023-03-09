@@ -1,6 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin" "org.sonarqube" version "3.5.0.2730"
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "ksu3101_BookSearch"
+    property "sonar.organization", "ksu3101"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 
 android {
     compileSdkVersion rootProject.compileSdk
